@@ -32,7 +32,7 @@ INC_NetCDF= $(shell nf-config --fflags)
 # Compiler selection
 #
 ifeq ($(FC),gfortran)
-  FFLAGS= -ffixed-line-length-132 -O2
+  FFLAGS= -ffixed-line-length-132 -O2 -fallow-invalid-boz
   LINKER= $(FC)
   LFLAGS=
 endif	

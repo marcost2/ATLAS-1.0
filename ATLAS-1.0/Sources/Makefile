@@ -22,8 +22,8 @@ EXE=ATLAS.$(ver).x
 #   INC_NetCDF= -I/home/hp/local/include/
 #endif
 
-LIB_NetCDF= $(shell nf-config --prefix)/lib/libnetcdff.so
-INC_NetCDF= $(shell nf-config --fflags)
+LIB_NetCDF= -L$(shell nf-config --prefix)/lib -lnetcdff -ldl -lm
+INC_NetCDF= $(shell nf-config --fflags) 
 #
 #----------------------------------------
 # Do not change anything beyond this line

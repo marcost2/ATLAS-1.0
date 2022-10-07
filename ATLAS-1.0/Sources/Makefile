@@ -11,16 +11,19 @@ EXE=ATLAS.$(ver).x
 #
 #  3. Location of the NetCDF library (MN,HOME)
 #
-MACHINE=HOME2
+#MACHINE=HOME2
 #
-ifeq ($(MACHINE),HOME2)
-   LIB_NetCDF= /usr/local/lib/libnetcdff.so
-   INC_NetCDF= -I/usr/local/include/
-endif
-ifeq ($(MACHINE),HOME)
-   LIB_NetCDF= /home/hp/local/lib/libnetcdff.so
-   INC_NetCDF= -I/home/hp/local/include/
-endif
+#ifeq ($(MACHINE),HOME2)
+#   LIB_NetCDF= /usr/local/lib/libnetcdff.so
+#   INC_NetCDF= -I/usr/local/include/
+#endif
+#ifeq ($(MACHINE),HOME)
+#   LIB_NetCDF= /home/hp/local/lib/libnetcdff.so
+#   INC_NetCDF= -I/home/hp/local/include/
+#endif
+
+LIB_NetCDF= $(shell nf-config --prefix)/lib/libnetcdff.so
+INC_NetCDF= $(shell nf-config --fflags)
 #
 #----------------------------------------
 # Do not change anything beyond this line

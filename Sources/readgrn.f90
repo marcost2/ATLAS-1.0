@@ -145,11 +145,6 @@
             end do
             close (98)
          end if
-
-         if (my_id .ne. 0) then
-            open (90, file=TRIM(fgrn), status='old', err=110)
-            close (90, status='delete')
-         end if
          !
       end do
       !
